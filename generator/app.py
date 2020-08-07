@@ -1,28 +1,24 @@
-# generator/app.py
+# destination/main.py
 import os
 import json
-from cgi import log
-from time import sleep
-from kafka import KafkaProducer
-from transactions import create_random_transaction
+import kafka_interface as kafka
+import mongodb_interface as mongo
 
 KAFKA_BROKER_URL = os.environ.get('KAFKA_BROKER_URL')
-OUTPUT_TOPIC = os.environ.get('OUTPUT_TOPIC')
-TRANSACTIONS_PER_SECOND = float(os.environ.get('TRANSACTIONS_PER_SECOND'))
-SLEEP_TIME = 1 / TRANSACTIONS_PER_SECOND
-
-
+TOPIC_OUTPUT = os.environ.get('TOPIC_OUTPUT')
+DATABASE = os.environ.get('DATABASE')
 
 if __name__ == '__main__':
-    producer = KafkaProducer(
-        bootstrap_servers=KAFKA_BROKER_URL,
-        # Encode all values as JSON
-        value_serializer=lambda value: json.dumps(value).encode()
-    )
-    #while True:
-    for i in range(0,30):
-        future = producer.send(OUTPUT_TOPIC, value=str(i) + " - MESSAGGIO")
-        result = future.get(timeout=60)
-        #print(transaction)  # DEBUG
-        print("Sent message n# "+str(i))
-        sleep(SLEEP_TIME)
+    producer = kafka.connectProducer(server = KAFKA_BROKER_URL)
+    db = mongo.get_db(DATABASE)
+    collections = db.list_collection_names()
+    for collectionName in collections:
+        collection = db[collectionName]
+        for document in collection.find():
+            content = {
+                'domain': document['domain'],
+                'TaggedClusters': document['TaggedClusters']
+            }
+            content_json = json.dumps(content)
+            kafka.send_message(producer=producer, topic=TOPIC_OUTPUT, value=content_json)
+
