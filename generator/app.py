@@ -15,10 +15,14 @@ if __name__ == '__main__':
     for collectionName in collections:
         collection = db[collectionName]
         for document in collection.find():
-            content = {
-                'domain': document['domain'],
-                'TaggedClusters': document['TaggedClusters']
-            }
-            content_json = json.dumps(content)
-            kafka.send_message(producer=producer, topic=TOPIC_OUTPUT, value=content_json)
+            taggedClusters = document['TaggedClusters']
+            for taggedCluster in taggedClusters:
+                if taggedCluster['label'] == "products":
+                    print("found a products's cluster in " +str(document['domain']))
+                    content = {
+                        'domain': document['domain'],
+                        'TaggedClusters': document['TaggedClusters']
+                    }
+                    content_json = json.dumps(content)
+                    kafka.send_message(producer=producer, topic=TOPIC_OUTPUT, value=content_json)
 

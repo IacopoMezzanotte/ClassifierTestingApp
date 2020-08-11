@@ -19,17 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5592a2c0-2ddc-48b5-afe4-cad769be9701" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/kafkaProva.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kafkaProva.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="5592a2c0-2ddc-48b5-afe4-cad769be9701" name="Default Changelist" comment="first commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/destination/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/destination/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/detector/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/detector/app.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/detector/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/generator/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/generator/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generator/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/generator/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +68,14 @@
       <option name="presentableId" value="Default" />
       <updated>1596527631629</updated>
     </task>
+    <task id="LOCAL-00001" summary="first commit">
+      <created>1596822270203</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1596822270203</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -90,10 +90,26 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1596789682814">
+    <state x="233" y="0" key="#Intentions" timestamp="1597137578342">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1596789682814" />
+    <state x="233" y="0" key="#Intentions/0.0.1280.680@0.0.1280.680" timestamp="1597137578342" />
+    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1597050210323">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1597050210323" />
+    <state x="500" y="239" key="Github.ShareDialog" timestamp="1596822153140">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="500" y="239" key="Github.ShareDialog/0.0.1280.680@0.0.1280.680" timestamp="1596822153140" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1596822296315">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1596822296315" />
   </component>
 </project>
